@@ -6,16 +6,29 @@
 #include <iostream>
 #include <cmath>
 
+#define PI 3.14159
+
 using namespace std;
  
 int main() {
-    int A, B, C, MaiorAB, MaiorABC;
+    double A, B, C, triangle, circle, trapeze, square, retangle;
+
     cin >> A;
     cin >> B;
     cin >> C;
-    MaiorAB = (A + B + abs(A - B))/2;
-    MaiorABC = (MaiorAB + C + abs(MaiorAB - C))/2;
-    cout << MaiorABC << " eh o maior\n";
- 
+
+    triangle = (A*C)/2;
+    circle = PI * pow(C, 2);
+    trapeze = ((A+B)*C)/2;
+    square = pow(B,2);
+    retangle = A * B;
+
+    cout.precision(3);
+    
+    cout << "TRIANGULO: " << fixed << triangle << "\n";
+    cout << "CIRCULO: " << fixed << circle << "\n";
+    cout << "TRAPEZIO: " << fixed << trapeze << "\n";
+    cout << "QUADRADO: " << fixed << square << "\n";
+    cout << "RETANGULO: " << fixed << retangle << "\n";
     return 0;
 }
